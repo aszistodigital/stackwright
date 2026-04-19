@@ -67,7 +67,10 @@ export default function ContactForm() {
 
   const advance = () => {
     if (!canContinue()) return;
-    if (typeof step === 'number') goTo(step < TOTAL ? step + 1 : 'thankyou');
+    if (typeof step === 'number') {
+      if (step === TOTAL) submitToFormspree();
+      goTo(step < TOTAL ? step + 1 : 'thankyou');
+    }
   };
 
   const skip = () => {
@@ -80,6 +83,14 @@ export default function ContactForm() {
       setStep(fromStep < TOTAL ? fromStep + 1 : 'thankyou');
       setVisible(true);
     }, 300);
+  };
+
+  const submitToFormspree = () => {
+    fetch('https://formspree.io/f/mzdyvpzb', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(answers),
+    });
   };
 
   const pulse = (opt, callback) => {
