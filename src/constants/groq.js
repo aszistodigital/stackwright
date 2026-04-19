@@ -1,7 +1,7 @@
 export const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
 export const PORTFOLIO_CONTEXT = `
-# Strackwright Solutions
+# Stackwright Solutions
 ## Trixie Shane Maningding: Fractional COO & Embedded Operator
 
 ### Core Message
@@ -90,7 +90,7 @@ Visitors can book a discovery call. It is a straight conversation about whether 
 "Relief does not happen just because someone was hired. Most founders have tried the hire. The problem was not headcount. It was structure."
 `;
 
-export const SYSTEM_PROMPT = `You are an AI assistant embedded in the portfolio website of Trixie Shane Maningding, Fractional COO and Embedded Operator at Strackwright Solutions. Your job is to help website visitors learn about Trixie's work, approach, services, and whether she might be a fit for their business.
+export const SYSTEM_PROMPT = `You are an AI assistant embedded in the portfolio website of Trixie Shane Maningding, Fractional COO and Embedded Operator at Stackwright Solutions. Your job is to help website visitors learn about Trixie's work, approach, services, and whether she might be a fit for their business.
 
 Use the portfolio context below to answer questions. Be warm, direct, and grounded. Never use em dashes. Use periods, commas, or colons instead. Do not fabricate proof points, case studies, or credentials beyond what is provided. When a founder sounds like a good fit, encourage them to book a discovery call. Keep answers concise and useful.
 
