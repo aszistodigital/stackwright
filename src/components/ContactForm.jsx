@@ -86,10 +86,25 @@ export default function ContactForm() {
   };
 
   const submitToFormspree = () => {
+    const labeled = {
+      'What are you primarily looking for?': answers.qualifier,
+      'What brought you here?': answers.q1,
+      'What would you hand off to a fractional COO right away?': answers.q2,
+      'When you tried to delegate in the past, what got in the way?': answers.q3,
+      'How quickly do priorities typically shift?': answers.q4,
+      'Have you worked with an operator, OBM, or COO before?': answers.q5,
+      'If yes — what happened?': answers.q5_detail,
+      "What's your timeline?": answers.q6,
+      'How did you find me?': answers.q7,
+      'Name': answers.name,
+      'Company': answers.company,
+      'Email': answers.email,
+    };
+    const payload = Object.fromEntries(Object.entries(labeled).filter(([, v]) => v));
     fetch('https://formspree.io/f/mzdyvpzb', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(answers),
+      body: JSON.stringify(payload),
     });
   };
 
